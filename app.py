@@ -365,8 +365,8 @@ def get_data():
 @app.route('/data')
 def data():
     global predict_labels
-    if len(predict_labels) > 3:
-        predict_labels = predict_labels[-3:]
+    if len(predict_labels) > 6:
+        predict_labels = predict_labels[-6:]
     newest_data = list(reversed(predict_labels))
     return jsonify({'info': newest_data})
 
