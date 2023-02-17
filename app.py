@@ -12,9 +12,11 @@ from utils.functions import *
 
 app = Flask(__name__)
 
-fd_0 = UltraLightFaceDetecion("utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
-fd_1 = UltraLightFaceDetecion("utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
-fa = CoordinateAlignmentModel("utils/service/weights/coor_2d106.tflite")
+path = 'home/vkist/frontend_facerec_VKIST/'
+
+fd_0 = UltraLightFaceDetecion(path + "utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
+fd_1 = UltraLightFaceDetecion(path + "utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
+fa = CoordinateAlignmentModel(path + "utils/service/weights/coor_2d106.tflite")
 
 # url = 'http://192.168.0.100:5052/'
 url = 'http://123.16.55.212:85/'
@@ -28,8 +30,8 @@ crop_image_size = 100
 # MamNonTuoiTho
 # secret_key = "635b9ac4-7b46-4d9b-8baa-bf067c2ee2d4"
 
-# vkist_2 123456789
-secret_key = "fa93a7a5-ad41-4166-804c-322c5f59844b"
+# vkist_3 123456789
+secret_key = "bb04d080-372b-45d6-9111-4e5ed99a15ea"
 
 # test local
 # secret_key = "0520c095-7b1b-4bf9-b739-a15cb9466cb0"
