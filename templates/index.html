@@ -4,8 +4,24 @@
     <link rel="icon" type="image/icon" href="static/img/icon.png">
     <link rel="stylesheet" href="static/css/style.css">
     <script src="/static/js/moment.min.js"></script>
+    <script>
+
+      function allowReload() {
+			// Check if page has been loaded before
+			if (localStorage.getItem('pageLoadedBefore')) {
+				// Page has been loaded before, do not allow reload
+				// alert('Page can only be loaded once');
+				return false;
+			} else {
+				// Page has not been loaded before, allow reload and set flag
+				localStorage.setItem('pageLoadedBefore', true);
+				return true;
+			}
+		}
+	}
+</script>
   </head>
-  <body>
+  <body onload="allowReload()">
     <div class="container">
       <div class="container1">
         <img class="video" src="{{ url_for('video_feed_0') }}">
@@ -22,6 +38,7 @@
       </div>
     </div>
     <script>
+
       var person_I = (id, student_name, image_base64_0, image_base64_1, timestamp) => `
 
       <div class="data">
