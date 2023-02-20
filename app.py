@@ -12,7 +12,8 @@ from utils.functions import *
 
 app = Flask(__name__)
 
-path = 'home/vkist/frontend_facerec_VKIST/'
+path = './home/vkist/frontend_facerec_VKIST/'
+# path = './'
 
 fd_0 = UltraLightFaceDetecion(path + "utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
 fd_1 = UltraLightFaceDetecion(path + "utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
