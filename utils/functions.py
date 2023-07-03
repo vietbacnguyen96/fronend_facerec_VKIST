@@ -32,28 +32,19 @@ def align_face(raw_face, left_eye, right_eye):
     if direction == -1:
         angle = 90 - angle
 
-    # rotate image
-    rotated_face = Image.fromarray(raw_face)
-    rotated_face_array = np.array(rotated_face.rotate(direction * angle))
-    # return black background
-    # return rotated_face_array
+    # Rotate the face image by 30 degrees
+    angle = 30
+    rows, cols = raw_face.shape[:2]
+    rotation_matrix = cv2.getRotationMatrix2D((cols/2, rows/2), angle, 1)
+    rotated_image = cv2.warpAffine(raw_face, rotation_matrix, (cols, rows))
 
-    # return white background
-    # Convert the rotated image to a numpy array
-    rotated_face_array = np.array(rotated_face_array)
+    # Fill the background with white color
+    mask = np.all(rotated_image == [0, 0, 0], axis=-1)
+    rotated_image[mask] = [255, 255, 255]
 
-    # Create a white background with the same shape as the rotated image
-    white_background = np.zeros((rotated_face_array.shape[0], rotated_face_array.shape[1], 3), dtype=np.uint8)
-    white_background.fill(255)
-
-    # Add the rotated image on top of the white background
-    result = white_background + rotated_face_array
-
-    # Save the result
-    # result = Image.fromarray(result)
-    # result.save("rotated_face_with_white_background.png")
-
-    return result
+    # Save the resulting image
+    # cv2.imwrite("rotated_filled_image.jpg", rotated_image)
+    return rotated_image
 
 def draw_box(image, boxes, color=(125, 255, 125), thickness = 10):
     """Draw square boxes on image"""
