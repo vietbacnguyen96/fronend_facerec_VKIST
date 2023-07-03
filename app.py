@@ -17,7 +17,7 @@ fd_1 = UltraLightFaceDetecion("utils/service/weights/RFB-320.tflite", conf_thres
 fa = CoordinateAlignmentModel("utils/service/weights/coor_2d106.tflite")
 
 # url = 'http://192.168.0.100:5052/'
-url = 'http://123.16.55.212:85/'
+url = 'https://dohubapps.com/user/daovietanh190499/5000/'
 
 api_list = [url + 'facerec', url + 'FaceRec_DREAM', url + 'FaceRec_3DFaceModeling', url + 'check_pickup']
 request_times = [15, 10, 10]
@@ -25,15 +25,11 @@ api_index = 0
 extend_pixel = 50
 crop_image_size = 100
 
-# MamNonTuoiTho
-# secret_key = "635b9ac4-7b46-4d9b-8baa-bf067c2ee2d4"
+# mamnontuoitho 123456789
+# secret_key = "506282dd-9dd9-446f-b3f4-0767e0a4b856"
 
-# vkist_2 123456789
-secret_key = "fa93a7a5-ad41-4166-804c-322c5f59844b"
-
-# test local
-# secret_key = "0520c095-7b1b-4bf9-b739-a15cb9466cb0"
-
+# vkist_6 123456789
+secret_key = "13971a9f-1b2d-46bb-b829-d395431448fd"
 
 predict_labels = []
 
