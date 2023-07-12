@@ -32,7 +32,7 @@ def align_face(raw_face, left_eye, right_eye):
     if direction == -1:
         angle = 90 - angle
 
-    # Rotate the face image by 30 degrees
+    # Rotate the face image
     rows, cols = raw_face.shape[:2]
     rotation_matrix = cv2.getRotationMatrix2D((cols/2, rows/2), angle * direction, 1)
     rotated_image = cv2.warpAffine(raw_face, rotation_matrix, (cols, rows))
