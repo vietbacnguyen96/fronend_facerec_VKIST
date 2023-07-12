@@ -35,7 +35,7 @@ def align_face(raw_face, left_eye, right_eye):
     # Rotate the face image by 30 degrees
     angle = 30
     rows, cols = raw_face.shape[:2]
-    rotation_matrix = cv2.getRotationMatrix2D((cols/2, rows/2), angle, 1)
+    rotation_matrix = cv2.getRotationMatrix2D((cols/2, rows/2), angle * direction, 1)
     rotated_image = cv2.warpAffine(raw_face, rotation_matrix, (cols, rows))
 
     # Fill the background with white color
