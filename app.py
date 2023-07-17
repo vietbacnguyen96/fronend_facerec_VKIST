@@ -12,9 +12,9 @@ from utils.functions import *
 
 app = Flask(__name__)
 
-fd_0 = UltraLightFaceDetecion("utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
-fd_1 = UltraLightFaceDetecion("utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
-fa = CoordinateAlignmentModel("utils/service/weights/coor_2d106.tflite")
+fd_0 = UltraLightFaceDetecion("/home/vkist1/frontend_facerec_VKIST/utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
+fd_1 = UltraLightFaceDetecion("/home/vkist1/frontend_facerec_VKIST/utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
+fa = CoordinateAlignmentModel("/home/vkist1/frontend_facerec_VKIST/utils/service/weights/coor_2d106.tflite")
 
 # url = 'http://192.168.0.100:5052/'
 url = 'https://dohubapps.com/user/daovietanh190499/5000/'
@@ -26,10 +26,10 @@ extend_pixel = 50
 crop_image_size = 100
 
 # mamnontuoitho 123456789
-# secret_key = "506282dd-9dd9-446f-b3f4-0767e0a4b856"
+secret_key = "506282dd-9dd9-446f-b3f4-0767e0a4b856"
 
 # vkist_6 123456789
-secret_key = "13971a9f-1b2d-46bb-b829-d395431448fd"
+# secret_key = "13971a9f-1b2d-46bb-b829-d395431448fd"
 
 predict_labels = []
 
