@@ -12,9 +12,12 @@ from utils.functions import *
 
 app = Flask(__name__)
 
-fd_0 = UltraLightFaceDetecion("/home/vkist1/frontend_facerec_VKIST/utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
-fd_1 = UltraLightFaceDetecion("/home/vkist1/frontend_facerec_VKIST/utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
-fa = CoordinateAlignmentModel("/home/vkist1/frontend_facerec_VKIST/utils/service/weights/coor_2d106.tflite")
+path = "/home/vkist1/frontend_facerec_VKIST/"
+# path = "./"
+
+fd_0 = UltraLightFaceDetecion(path + "utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
+fd_1 = UltraLightFaceDetecion(path + "utils/service/weights/RFB-320.tflite", conf_threshold=0.98)
+fa = CoordinateAlignmentModel(path + "utils/service/weights/coor_2d106.tflite")
 
 # url = 'http://192.168.0.100:5052/'
 url = 'https://dohubapps.com/user/daovietanh190499/5000/'
