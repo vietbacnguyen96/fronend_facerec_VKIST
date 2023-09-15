@@ -20,7 +20,7 @@ fd_1 = UltraLightFaceDetecion(path + "utils/service/weights/RFB-320.tflite", con
 fa = CoordinateAlignmentModel(path + "utils/service/weights/coor_2d106.tflite")
 
 # url = 'http://192.168.0.100:5052/'
-url = 'https://dohubapps.com/user/daovietanh190499/5000/'
+url = 'https://dohubapps.com/user/itvkist/5000/'
 
 api_list = [url + 'facerec', url + 'FaceRec_DREAM', url + 'FaceRec_3DFaceModeling', url + 'check_pickup']
 request_times = [15, 10, 10]
